@@ -120,16 +120,22 @@ $con = mysqli_connect("localhost","root","","dataStore");
                             
                             $handel = fopen($file,"r");
 
-                            $i = 3;
+                            $i = 0;
+
+                       
 
                             while(($cont = fgetcsv($handel , 10000000 , "," ))!== false)
 
                             {
+
+                                
+
                                 $channel = $_POST['Channel'];
 
                                 //$table =rtrim( $_FILES['file']['name'],".csv");
 
-
+                                if($i>2){
+                                    
                                         $action = $cont[0];
 
                                         $itemNum = $cont[1];
@@ -177,9 +183,10 @@ $con = mysqli_connect("localhost","root","","dataStore");
 
                                     mysqli_query($con,$query);
 
-
-                            
-
+                                }
+                                
+                            $i++;
+                                
                         }
                     }
 
