@@ -1,0 +1,266 @@
+          // if(isset($_POST['getLowQnt']))
+          
+
+          // {
+          //       $chanel = $_POST['Channel'];
+               
+          //      if($chanel == "Open this select menu" || empty($chanel)){
+
+          //           echo "<h3 align='center' style='color:red;'>please Select Your channel..!</h3>"; 
+
+          //      }else{
+
+          //      echo'<div class="col-md-8" style = "margin-left:1159px; margin-bottom:10px;">
+          //                <a class="btn btn-dark" href="downloard.php?filename=data" role="button">Download</a>
+          //           </div>';
+
+          //      echo '<br><br><br><div class="container"> 
+
+          //      <div class = "col-md-12">
+
+          //           <div class="table-responsive">  
+
+          //                <table id="employee_data" class="table table-striped table-bordered">  
+          //                                    <thead>  
+          //                          <tr>
+
+          //                               <th>Action</th>
+
+          //                               <th>Item Number</th>
+                                                       
+          //                               <th>Title</th>
+
+          //                               <th>Listing Site</th>
+
+          //                               <th>Currency</th>
+
+          //                               <th>Start Price</th>
+
+          //                               <th>Buy It Now Price</th>
+
+          //                               <th>Available Quality</th>
+
+          //                               <th>Realtion Ship</th>
+
+          //                               <th>Realation Ship Deatails</th>
+
+          //                               <th>Custom Label</th>
+
+          //                               <th>Channel</th>
+
+          //                          </tr>
+
+          //                     </thead>'; 
+
+          //                     $conn = mysqli_connect('localhost','root','','dataStore'); 
+
+          //                     $sql =  "SELECT JsonData FROM `stocks_1` ORDER BY id DESC LIMIT 1" ;
+
+          //                     $result = mysqli_query($conn,$sql);
+
+          //                     while($row = mysqli_fetch_array($result)){
+
+          //                          $allSku = $row['JsonData'];
+
+          //                          $deJeson =json_decode($allSku);
+
+          //                          $Sku = array_column($deJeson,'Sku');
+
+          //                     }
+
+          //                     $query = "SELECT * FROM data WHERE 1 ";
+
+          //                     foreach($Sku as $key =>$skuValue){ 
+
+          //                     if($key == 0 )
+
+          //                     {
+
+          //                          $query .= " AND (";
+
+          //                     }
+          //                     $query .= "Relationshipdetails LIKE '%".$skuValue."%'  ";
+
+          //                     if($key+1 !== count($Sku)){
+
+          //                          $query .= "OR ";
+
+          //                     }
+
+          //                     }
+                             
+
+          //                     $query .= " ) AND (channel = '$chanel')  ";
+
+
+
+          //                     $result = mysqli_query($conn, $query);
+
+          //                     while($row = mysqli_fetch_array($result)) 
+
+          //                          {  
+          //                               echo '  
+          //                               <tr>  
+
+          //                                    <td>'.$row["Action"].'</td>  
+
+          //                                    <td>'.$row["Itemnumber"].'</td>
+
+          //                                    <td>'.$row["Title"].'</td>  
+
+          //                                    <td>'.$row["Listingsite"].'</td>  
+
+          //                                    <td>'.$row["Currency"].'</td> 
+
+          //                                    <td>'.$row["Startprice"].'</td>  
+
+          //                                    <td>'.$row["BuyItNowprice"].'</td>  
+
+          //                                    <td>'.$row["Availablequantity"].'</td>  
+
+          //                                    <td>'.$row["Relationship"].'</td>  
+
+          //                                    <td>'.$row["Relationshipdetails"].'</td>  
+
+          //                                    <td>'.$row["Customlabel"].'</td>  
+
+          //                                    <td>'.$row["channel"].'</td> 
+                                             
+
+          //                               </tr>  
+          //                               ';  
+          //                          }  
+                                   
+          //                     echo '</table>  
+
+          //                </div> 
+
+          //                </div>  
+
+          //           </div>'; 
+          //       }          
+                        
+          // }
+
+          // if(isset($_POST['others']))
+          // {
+          //      $chanel = $_POST['Channel'];
+
+          //      if($chanel == "Open this select menu" || empty($chanel)){
+
+          //           echo "<h3 align='center' style='color:red;'>please Select Your channel..!</h3>"; 
+
+          //      } else{
+
+          //      echo '<br><br><div class="container"> 
+
+          //      <div class = "col-md-12">
+
+          //           <div class="table-responsive">  
+
+          //                <table id="employee_data" class="table table-striped table-bordered">  
+          //                                    <thead>  
+          //                          <tr>
+
+          //                               <th>Action</th>
+
+          //                               <th>Item Number</th>
+                                                       
+          //                               <th>Title</th>
+
+          //                               <th>Listing Site</th>
+
+          //                               <th>Currency</th>
+
+          //                               <th>Start Price</th>
+
+          //                               <th>Buy It Now Price</th>
+
+          //                               <th>Available Quality</th>
+
+          //                               <th>Realtion Ship</th>
+
+          //                               <th>Realation Ship Deatails</th>
+
+          //                               <th>Custom Label</th>
+
+          //                               <th>Channel</th>
+
+          //                               <th>Low Quantity Sku</th>
+
+          //                          </tr>
+          //                     </thead>'; 
+
+          //                     $query ="SELECT DISTINCT(data.id),data.Action,data.Itemnumber,data.Title,data.Listingsite,data.Currency,data.Startprice,data.
+
+          //                               BuyItNowprice,data.Availablequantity,data.Relationship,data.Relationshipdetails,data.Customlabel,data.channel,stocks.Sku 
+
+          //                               FROM stocks,data WHERE data.Relationshipdetails != stocks.Sku AND data.channel = '$chanel'"; 
+
+          //                     $result = mysqli_query($connect, $query);
+
+          //                     while($row = mysqli_fetch_array($result)) 
+
+          //                          {  
+          //                               echo '  
+          //                               <tr>  
+
+          //                                    <td>'.$row["Action"].'</td>  
+
+          //                                    <td>'.$row["Itemnumber"].'</td>
+
+          //                                    <td>'.$row["Title"].'</td>  
+
+          //                                    <td>'.$row["Listingsite"].'</td>  
+
+          //                                    <td>'.$row["Currency"].'</td> 
+
+          //                                    <td>'.$row["Startprice"].'</td>  
+
+          //                                    <td>'.$row["BuyItNowprice"].'</td>  
+
+          //                                    <td>'.$row["Availablequantity"].'</td>  
+
+          //                                    <td>'.$row["Relationship"].'</td>  
+
+          //                                    <td>'.$row["Relationshipdetails"].'</td>  
+
+          //                                    <td>'.$row["Customlabel"].'</td>  
+
+          //                                    <td>'.$row["channel"].'</td> 
+                                             
+          //                                    <td>'.$row['Sku'].'</td>
+
+          //                               </tr>  
+          //                               ';  
+          //                          }  
+                                   
+          //                     echo '</table>  
+
+          //                </div> 
+
+          //                </div>  
+
+          //           </div>'; 
+          //      }   
+          // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          //---------------------------------------------------------------------------------------------
